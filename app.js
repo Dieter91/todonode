@@ -4,15 +4,24 @@ const methodOverride = require('method-override');
 const Todo = require('./models/todo');
 const app = express();
 
+// mongoose
+//   .connect('mongodb://localhost:27017/todonode')
+//   .then(() => {
+//     console.log('MONGO CONNECTION OPEN!!!');
+//   })
+//   .catch((err) => {
+//     console.log('Error, MONGO CONNECTION!!!!');
+//     console.log(err);
+//   });
+
+//DB CONFIG
+const db = require('./config/keys').MongoURI;
+
+//connect to monog
 mongoose
-  .connect('mongodb://localhost:27017/todonode')
-  .then(() => {
-    console.log('MONGO CONNECTION OPEN!!!');
-  })
-  .catch((err) => {
-    console.log('Error, MONGO CONNECTION!!!!');
-    console.log(err);
-  });
+  .connect(db)
+  .then(() => console.log('DB CONNECTED'))
+  .catch((err) => console.log(err));
 
 // override with the X-HTTP-Method-Override header in the request
 app.use(methodOverride('X-HTTP-Method-Override'))
