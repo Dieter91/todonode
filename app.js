@@ -55,6 +55,7 @@ app.delete('/delete/:id', async(req, res)=> {
     res.redirect('/');
 })
 
-app.listen('3000', () => {
-    console.log('Listening on 3000');
-})
+
+//server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, console.log(`listening on ${PORT}`));
