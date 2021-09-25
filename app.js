@@ -16,7 +16,8 @@ const app = express();
 
 //DB CONFIG
 const db = require('./config/keys').MongoURI;
-
+const dotenv = require('dotenv');
+dotenv.config();
 //connect to monog
 mongoose
   .connect(db)
