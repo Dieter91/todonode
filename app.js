@@ -4,16 +4,6 @@ const methodOverride = require('method-override');
 const Todo = require('./models/todo');
 const app = express();
 
-// mongoose
-//   .connect('mongodb://localhost:27017/todonode')
-//   .then(() => {
-//     console.log('MONGO CONNECTION OPEN!!!');
-//   })
-//   .catch((err) => {
-//     console.log('Error, MONGO CONNECTION!!!!');
-//     console.log(err);
-//   });
-
 //DB CONFIG
 const db = require('./config/keys').MongoURI;
 
